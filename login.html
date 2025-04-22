@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+    <main>
+        <div class="login-block">
+            <h1>Log into your account</h1>
+
+            <form id="registerForm">
+
+                <!-- Name Field -->
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" id="name" class="form-control" placeholder="Your name">
+                    </div>
+                    <span class="error" id="nameError"></span>
+                </div>
+
+                <hr class="hr-xs">
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="email" id="email" class="form-control" placeholder="Your email address">
+                    </div>
+                    <span class="error" id="emailError"></span>
+                </div>
+
+                <hr class="hr-xs">
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="password" id="password" class="form-control" placeholder="Choose a password">
+                    </div>
+                    <span class="error" id="passwordError"></span>
+                </div>
+
+                <button class="btn btn-primary btn-block" type="submit">Sign up</button>
+
+                <div class="login-footer">
+                    <h6>Or register with</h6>
+                    <ul class="social-icons" style="display: flex; gap: 10px; justify-content: center; list-style: none; padding: 0;">
+                        <li>
+                            <a class="facebook" href="#" style="font-size: 24px; color: #3d5997;">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="twitter" href="#" style="font-size: 24px; color: #1da1f2;">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="linkedin" href="#" style="font-size: 24px; color: #0077b5;">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+        </div>
+
+        </form>
+        </div>
+
+        <div class="login-links">
+            <p class="text-center">Don't have an account? <a class="txt-brand" href="register.html">Register</a></p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <!---
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            let valid = true;
+
+            // Name Validation
+            let name = document.getElementById("name").value.trim();
+            let nameError = document.getElementById("nameError");
+            if (name.length < 3) {
+                nameError.textContent = "Name must be at least 3 characters long.";
+                valid = false;
+            } else {
+                nameError.textContent = "";
+            }
+
+            // Email Validation
+            let email = document.getElementById("email").value.trim();
+            let emailError = document.getElementById("emailError");
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                emailError.textContent = "Please enter a valid email address.";
+                valid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            // Password Validation
+            let password = document.getElementById("password").value;
+            let passwordError = document.getElementById("passwordError");
+            let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+            if (!passwordPattern.test(password)) {
+                passwordError.textContent = "Password must be at least 6 characters, with at least one uppercase letter, one lowercase letter, and one number.";
+                valid = false;
+            } else {
+                passwordError.textContent = "";
+            }
+
+            if (!valid) {
+                event.preventDefault(); // Stop submission if validation fails
+            } else {
+                // Allow form submission without an alert
+                this.action = "home.html"; // Set form action to home page
+                this.submit(); // Submit the form
+            }
+        });
+    </script>
+-->
+
+    <div class="footer">
+        <p>© 2025 Women Safety. All rights reserved.</p>
+    </div>
+
+</body>
+
+</html>

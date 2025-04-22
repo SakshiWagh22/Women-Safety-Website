@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: rgb(198, 128, 84);
+            font-family: Arial, sans-serif;
+        }
+        
+        .sos-button {
+            background-color: rgb(227, 3, 3);
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 8px 15px;
+        }
+        
+        .sos-button:hover {
+            background-color: darkred;
+        }
+        
+        .carousel-item img {
+            width: 75%;
+            height: 50vh;
+            object-fit: cover;
+            margin: auto;
+        }
+        
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .carousel {
+            max-width: 85%;
+            margin: auto;
+        }
+        
+        .features {
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .feature-box {
+            min-height: 220px;
+            /* Equal height */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(235, 8, 98, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+            background-color: #d299ad;
+            /* light pink on hover */
+        }
+        
+        .footer {
+            background: #222;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .helpline-header {
+            background-color: rgb(12, 1, 64);
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        
+        .helpline-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .helpline-header p {
+            font-size: 18px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-text a:hover {
+            color: #6610f2;
+            /* Bootstrap's purple, or any color you like */
+        }
+        
+        .card i {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #01162c;
+        }
+        /*safety*/
+        
+        .custom-heading {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3b0065;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin: 0 auto;
+        }
+        
+        .custom-heading::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+        }
+        
+        .resources,
+        .safety-guidelines {
+            padding: 50px 0;
+        }
+        
+        .resource-box,
+        .guideline-box {
+            height: 100%;
+            display: flex;
+            background-color: #f8f9fa;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .resource-box:hover,
+        .guideline-box:hover {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Unique Navbar Styling */
+        
+        .navbar {
+            background: linear-gradient(90deg, #31016c, #f56b87);
+            /* Purple to Pink */
+            padding: 15px 30px;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff !important;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            font-size: 16px;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #ffe600 !important;
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #ffe600;
+            bottom: -6px;
+            left: 0;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .dropdown-menu {
+            background-color: #30006b;
+            border: none;
+            border-radius: 10px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        .dropdown-item {
+            color: #ffffff;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .dropdown-item:hover {
+            background-color: #fc466b;
+            color: #fff;
+            border-radius: 5px;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SAKHI SURKSHA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">HOME</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            USER Authentication
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="register.html">Registration</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="helpline.html">Helpline</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Resource
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="safety.html">Safety Resource Tutorial</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="laws.html">LAW's</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="crime.html">Crime Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link sos-button" href="#">SOS Alert</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="use-sos.jpg" class="d-block" alt="First slide">
+                <div class="carousel-caption">
+                    <h5>One Click SOS</h5>
+                    <p>Quickly send alerts to authorities and your contacts.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="self-defence.jpg" class="d-block" alt="Second slide">
+                <div class="carousel-caption">
+                    <h5>Stay Safe, Stay Alert</h5>
+                    <p>Our emergency alert system helps you in times of need.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="location_1-2.webp" class="d-block" alt="Third slide">
+                <div class="carousel-caption">
+                    <h5>Real-Time Tracking</h5>
+                    <p>Share your location for enhanced safety.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container features py-5">
+        <div class="row justify-content-center g-4">
+            <div class="col-md-3 d-flex">
+                <div class="feature-box bg-light p-4 text-center w-100">
+                    <h4>Emergency Alert</h4>
+                    <p>Quick SOS alerts, live location sharing, and emergency contacts.</p>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex">
+                <div class="feature-box bg-light p-4 text-center w-100">
+                    <h4>Safety Resources</h4>
+                    <p>Learn self-defense techniques and legal rights for protection.</p>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex">
+                <div class="feature-box bg-light p-4 text-center w-100">
+                    <h4>Crime Reporting</h4>
+                    <p>Report incidents anonymously and get help from authorities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="helpline" class="container py-5 mt-5">
+        <!-- Header -->
+        <div class="helpline-header">
+            <h1>Emergency Helplines</h1>
+            <p>Reach out anytime – We're here to help</p>
+        </div>
+
+        <!-- Helpline Cards -->
+        <!-- Helpline Cards -->
+        <div class="container my-5">
+            <div class="row g-4">
+
+                <!-- Police -->
+                <div class="col-md-4">
+                    <div class="card p-4 text-center animate__animated animate__fadeInUp">
+                        <i class="fas fa-shield-alt"></i>
+                        <h5 class="card-title">Police Emergency</h5>
+                        <p class="card-text">
+                            <a href="tel:100" class="link-icon text-dark fw-semibold">
+                                <i class="fas fa-phone-alt me-2"></i>Call 100
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Ambulance -->
+                <div class="col-md-4">
+                    <div class="card p-4 text-center animate__animated animate__fadeInUp">
+                        <i class="fas fa-ambulance"></i>
+                        <h5 class="card-title">Ambulance</h5>
+                        <p class="card-text">
+                            <a href="tel:102" class="link-icon text-dark fw-semibold">
+                                <i class="fas fa-phone-alt me-2"></i>Call 102
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Women's Helpline -->
+                <div class="col-md-4">
+                    <div class="card p-4 text-center animate__animated animate__fadeInUp">
+                        <i class="fas fa-female"></i>
+                        <h5 class="card-title">Women’s Helpline</h5>
+                        <p class="card-text">
+                            <a href="tel:1091" class="link-icon text-dark fw-semibold">
+                                <i class="fas fa-phone-alt me-2"></i>Call 1091
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cyber Crime -->
+                <div class="col-md-4">
+                    <div class="card p-4 text-center animate__animated animate__fadeInUp">
+                        <i class="fas fa-globe"></i>
+                        <h5 class="card-title">Cyber Crime</h5>
+                        <p class="card-text">
+                            <a href="tel:155260" class="link-icon text-dark fw-semibold">
+                                <i class="fas fa-phone-alt me-2"></i>Call 155260
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Child Helpline -->
+                <div class="col-md-4">
+                    <div class="card p-4 text-center animate__animated animate__fadeInUp">
+                        <i class="fas fa-child"></i>
+                        <h5 class="card-title">Child Helpline</h5>
+                        <p class="card-text">
+                            <a href="tel:1098" class="link-icon text-dark fw-semibold">
+                                <i class="fas fa-phone-alt me-2"></i>Call 1098
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Email Support -->
+                <div class="col-md-4">
+                    <div class="card p-4 text-center animate__animated animate__fadeInUp">
+                        <i class="fas fa-envelope"></i>
+                        <h5 class="card-title">Email Support</h5>
+                        <p class="card-text">
+                            <a href="mailto:support@womensafety.com" class="link-icon text-dark fw-semibold">
+                                <i class="fas fa-envelope-open-text me-2"></i>support@womensafety.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nearest Help Centers (Map Link) -->
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card p-4 text-center animate__animated animate__fadeInUp">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h5 class="card-title">Find Nearest Help Center</h5>
+                    <p class="card-text">
+                        <a href="https://www.google.com/maps/search/nearest+police+station+or+hospital/" target="_blank" class="link-icon text-dark fw-semibold">
+                            <i class="fas fa-map me-2"></i>Open the Google Maps
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--safety resources-->
+    <div class="container safety-guidelines">
+        <div class="text-center mb-4">
+            <h2 class="custom-heading">Self-Defense Techniques</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="guideline-box p-4">
+                    <h4>Palm Strike</h4>
+                    <p>Use the heel of your palm to strike the attacker's nose or chin.</p>
+                    <img src="plam strike.jpg" class="img-fluid" alt="Palm Strike" style="height: 250px; object-fit: cover; width: 100%;">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="guideline-box p-4">
+                    <h4>Groin Kick</h4>
+                    <p>Lift your knee and kick forward into the attacker's groin.</p>
+                    <img src="groin kick.jpg" class="img-fluid" alt="Groin Kick">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="guideline-box p-4">
+                    <h4>Elbow Strike</h4>
+                    <p>Bend your arm and swing your elbow into the attacker's jaw or ribs.</p>
+                    <img src="elbow strike.webp" class="img-fluid" alt="Elbow Strike" style="height: 290px; object-fit: cover; width: 100%;">
+                </div>
+            </div>
+            <div class=" col-md-6 ">
+                <div class="guideline-box p-4 ">
+                    <h4>Wrist Escape</h4>
+                    <p>Rotate your wrist toward the attacker's weakest grip point to break free.</p>
+                    <img src="maxresdefault.jpg " class="img-fluid " alt="Wrist Escape ">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 ">
+            <div class="col-md-6 ">
+                <div class="guideline-box p-4 ">
+                    <h4>Bear Hug Escape</h4>
+                    <p>Drop your weight and strike the attacker's ribs or stomp on their foot.</p>
+                    <img src="hug escape.jpg " class="img-fluid " alt="Bear Hug Escape ">
+                </div>
+            </div>
+            <div class="col-md-6 ">
+                <div class="guideline-box p-4 ">
+                    <h4>Using Objects for Defense</h4>
+                    <p>Use keys, pens, or bags as weapons against an attacker.</p>
+                    <img src="weapons.webp " class="img-fluid " alt="Using Objects for Defense " style="height: 290px; object-fit: cover; width: 100%; border-radius: 10px; ">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </section>
+    <section id="law" class="container py-5 mt-5">
+        <div class="container safety-guidelines">
+            <h2 class="text-center mb-4">Women's Rights & Indian Laws</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="guideline-box p-4">
+                        <h4>The Protection of Women from Domestic Violence Act, 2005</h4>
+                        <p>This law provides protection to women from domestic abuse and violence within their households.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="guideline-box p-4">
+                        <h4>The Dowry Prohibition Act, 1961</h4>
+                        <p>It prohibits the giving and taking of dowry and imposes strict punishments on those involved.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="guideline-box p-4">
+                        <h4>The Sexual Harassment of Women at Workplace Act, 2013</h4>
+                        <p>This act ensures a safe working environment for women by addressing sexual harassment cases.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="guideline-box p-4">
+                        <h4>The Maternity Benefit Act, 1961</h4>
+                        <p>It provides maternity leave and protection to working women before and after childbirth.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="guideline-box p-4">
+                        <h4>The Hindu Succession Act, 1956 (Amended in 2005)</h4>
+                        <p>This amendment grants equal inheritance rights to daughters in their family property.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="guideline-box p-4">
+                        <h4>The Medical Termination of Pregnancy Act, 1971</h4>
+                        <p>This act allows women to legally terminate pregnancies under specific conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 Women Safety. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
